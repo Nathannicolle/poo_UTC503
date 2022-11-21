@@ -44,11 +44,13 @@ public class CarteLieux {
 		this.points = points;
 	}
 	
-	/*public List<Lieu> searchPoints(String type) {
-		for(Point point : points) {
-			Lieu place = new TypeLieu(type, "", point.getX(), point.getY());
-			lieuOfType.add(place);
-		}
+	public List<Lieu> searchPoints(String type) {
+		/*for(Point point : points) {
+			TypeLieu place = new TypeLieu(type, "", point.getX(), point.getY());
+			if(place.getCaption() == type) {
+				lieuOfType.add(place);
+			}
+		}*/
 		return lieuOfType;
-	}*/
+	}
 }
