@@ -31,6 +31,38 @@ let conditionalReturn = function (list, condFunction) {
     return listValues;
 };
 
+// V1 de la version factorisé des deux fonctions du dessus
+/* let conditionFunction = function(list, condFunc, init, operation) {
+    let result = init;
+
+    list.forEach((elm) => {
+       if(condFunc(elm)) {
+           operation(elm, result);
+       }
+    });
+    return result;
+};*/
+
+let conditionFunction = function(list, condFunc, init, operation) {
+    // On passe un objet pour avoir une cohérence entre l'initialisation en mode [] et en mode 0
+    // Et donc pour fix le bug qui fait que le compteur restait à 0
+    init.result = init.value;
+
+    list.forEach((elm) => {
+        if(condFunc(elm)) {
+            operation(elm, init);
+        }
+    });
+    return init.result;
+};
+
+// On a donc bien value sous forme d'objet
+ajoutElmPositif = conditionFunction(values, (a)=>a>0, {value:[]}, (elm, r) => r.result.push(elm));
+countElmPositif = conditionFunction(values, (a)=>a>0, {value:0}, (elm, r) => r.result++);
+
+console.log(ajoutElmPositif);
+console.log(countElmPositif);
+// console.log(conditionalReturn(values, (a)=>a<0));
 /*let calculNombreElements = (list, conditionFunction) => conditionFunction(list);
 
 calculNombreElements(values, conditionCountPlus());*/
