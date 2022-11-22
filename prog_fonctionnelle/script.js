@@ -8,46 +8,18 @@ let estNegatif = (b) => b < 0;
 let estNul = (c) => c = 0;
 let entreDeuxBornes = (d, e, f) => d >= e && d <= f;
 
-let conditionCountPlus = function(list) {
+let testConditon = function(list, condition) {
     list.forEach((elm) => {
-        if(estPositif(elm)) {
+        if(condition(elm)) {
             count++;
         }
     });
-    console.log(count);
+    // console.log(count);
     return count;
 };
 
-let conditionCountMoins = function (list) {
-  list.forEach((elm) => {
-      if(estNegatif(elm)) {
-          count++;
-      }
-  });
-  console.log(count);
-  return count;
-};
 
-let conditionCountNul = function (list) {
-    list.forEach((elm) => {
-        if(estNul(elm)) {
-            count++;
-        }
-    });
-    console.log(count);
-    return count;
-};
-
-let conditionCountDeuxBornes = function (list, borneA, borneB) {
-    list.forEach((elm) => {
-        if(entreDeuxBornes(elm, borneA, borneB)) {
-            count++;
-        }
-    });
-    console.log(count);
-    return count;
-};
-
+testConditon(values, (a)=>a>0);
 
 /*let calculNombreElements = (list, conditionFunction) => conditionFunction(list);
 
