@@ -47,3 +47,8 @@ let conditionCountDeuxBornes = function (list, borneA, borneB) {
     console.log(count);
     return count;
 };
+
+
+/*let calculNombreElements = (list, conditionFunction) => conditionFunction(list);
+
+calculNombreElements(values, conditionCountPlus());*/
