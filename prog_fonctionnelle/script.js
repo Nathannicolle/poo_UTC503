@@ -21,6 +21,16 @@ let testConditon = function(list, condition) {
 
 testConditon(values, (a)=>a>0);
 
+let conditionalReturn = function (list, condFunction) {
+    let listValues = [];
+    list.forEach((elm) => {
+       if(condFunction(elm)) {
+           listValues.push(elm)
+       }
+    });
+    return listValues;
+};
+
 /*let calculNombreElements = (list, conditionFunction) => conditionFunction(list);
 
 calculNombreElements(values, conditionCountPlus());*/
